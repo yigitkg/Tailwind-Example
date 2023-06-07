@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {  
+    .nav-link {
+        @apply flex items-center h-10 rounded px-4 text-sm text-indigonight font-medium hover:bg-gray-200 transition-colors;
+    }
+    .nav-link.active {
+        @apply bg-indigonight text-white;
+    }
+}
+
+@layer base {
+    @import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&family=Titillium+Web:wght@400;700&display=swap');
+    html {
+        font-family: 'Inter', sans-serif;                                        
+    }
+}
