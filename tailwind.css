@@ -4,10 +4,19 @@
 
 @layer components {  
     .nav-link {
-        @apply flex items-center h-10 rounded px-4 text-sm text-indigonight font-medium hover:bg-gray-200 transition-colors;
+        @apply flex items-center h-10 rounded px-4 text-sm text-indigonight font-medium hover:bg-gray-200 dark:text-indigo-300 dark:hover:bg-indigo-800 dark:hover:text-white transition-colors;
     }
     .nav-link.active {
         @apply bg-indigonight text-white;
+    }
+    .modal {
+        @apply fixed inset-0 bg-indigonight bg-opacity-60 flex items-center justify-center opacity-0 invisible transition-opacity;
+    }
+    .modal.active {
+        @apply visible opacity-100;
+    }
+    .modal-content {
+        @apply bg-white rounded p-10 max-w-full min-w-[37.5rem] dark:bg-gray-900;
     }
 }
 
