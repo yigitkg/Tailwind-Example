@@ -9,5 +9,9 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "lodash": "^4.17.21",
+    "tailwindcss": "^3.3.2"
+  }
 }

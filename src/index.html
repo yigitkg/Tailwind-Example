@@ -10,18 +10,41 @@
 </head>
 <body class="bg-white h-full flex flex-col dark:bg-gray-900 dark:text-white">
 
-    <div class="h-15 border-b border-gray-200 dark:border-gray-700 flex-shrink-0 w-full flex justify-between items-center px-5">
+    <div class="h-15 border-b border-gray-200 dark:border-gray-700 flex-shrink-0 w-full flex justify-between items-center px-2 lg:px-5">
+        
+        <button onclick="sidebar()" class="text-indigonight dark:text-indigo-400 lg:hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 448 512" width="24" class="fill-current"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
+        </button>
+        
         <a href="#" class="text-2xl font-medium inline-flex items-center text-indigonight dark:text-indigo-300">
             ./testlogo
-            <span class="text-sm text-gray-400 ml-2">v1.0</span>
+            <span class="text-sm text-gray-400 ml-2 hidden lg:inline">v1.0</span>
         </a>
-        <form action="" class="w-1/3">
+        <form action="" class="w-1/3 hidden lg:block">
             <input type="text" placeholder="Search" class="w-full bg-gray-100 h-10 px-4 placeholder-gray-500 dark:bg-indigo-700 dark:placeholder-indigo-200 rounded ">
         </form>
-        <a href="javascript:;" onclick="modal('login-modal')" class="bg-indigonight text-white h-10 inline-flex items-center px-[1.375rem] rounded">Login</a>
+        <a href="javascript:;" onclick="modal('login-modal')" class="bg-indigonight hidden text-white h-10 inline-flex items-center px-[1.375rem] rounded">Login</a>
+    
+        <div class="group relative">
+            <button class="flex items-center h-10 gap-2 bg-indigo-100 rounded text-sm text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200">
+                <svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 -960 960 960" width="36" class="fill-current text-indigo-700 dark:text-indigo-300"><path d="M222-255q63-44 125-67.5T480-346q71 0 133.5 23.5T739-255q44-54 62.5-109T820-480q0-145-97.5-242.5T480-820q-145 0-242.5 97.5T140-480q0 61 19 116t63 109Zm257.814-195Q422-450 382.5-489.686q-39.5-39.686-39.5-97.5t39.686-97.314q39.686-39.5 97.5-39.5t97.314 39.686q39.5 39.686 39.5 97.5T577.314-489.5q-39.686 39.5-97.5 39.5Zm.654 370Q398-80 325-111.5q-73-31.5-127.5-86t-86-127.266Q80-397.532 80-480.266T111.5-635.5q31.5-72.5 86-127t127.266-86q72.766-31.5 155.5-31.5T635.5-848.5q72.5 31.5 127 86t86 127.032q31.5 72.532 31.5 155T848.5-325q-31.5 73-86 127.5t-127.032 86q-72.532 31.5-155 31.5ZM480-140q55 0 107.5-16T691-212q-51-36-104-55t-107-19q-54 0-107 19t-104 55q51 40 103.5 56T480-140Zm0-370q34 0 55.5-21.5T557-587q0-34-21.5-55.5T480-664q-34 0-55.5 21.5T403-587q0 34 21.5 55.5T480-510Zm0-77Zm0 374Z"/></svg>
+                <span class="hidden lg:inline ml-3">Yiğit Kutay Gülben</span>
+                <svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 -960 960 960" width="36" class="fill-current text-indigo-700 dark:text-indigo-300"><path d="M480-360 280-559h400L480-360Z"/></svg>
+            </button>
+            <div tabindex="0" class="opacity-0 invisible transition-all group-focus-within:opacity-100 group-focus-within:visible group-focus-within:mt-1 absolute top-full right-0 w-28 lg:w-[11.5rem] rounded space-y-1 p-4 bg-indigo-200 dark:bg-indigo-600">
+                <a href="javascript:;" onclick="modal('login-modal')" class="dropdown-menu">Profile</a>
+                <a href="#" class="dropdown-menu">Settings</a>
+                <a href="#" class="dropdown-menu">Followers</a>
+                <a href="#" class="dropdown-menu">Following</a>
+                <a href="#" class="dropdown-menu">Questions</a>
+                <a href="#" class="dropdown-menu">Notifications</a>
+                <a href="#" class="dropdown-menu hover:bg-red-200 dark:hover:bg-red-300 text-red-600">Leave</a>
+            </div>
+        </div>
     </div>
-    <main class="h-full flex">
-        <aside class="w-64 border-r p-2 flex flex-col border-gray-200 dark:border-gray-800 divide-solid divide-gray-300 dark:divide-gray-800 divide-y overflow-auto">
+
+    <main class="calc-h-full-15 flex">
+        <aside class="sidebar">
             <nav class="mb-4 space-y-2">
                 <a href="#" class="nav-link active">Main Page</a>
                 <a href="#" class="nav-link">Flow</a>
@@ -46,65 +69,66 @@
                 </button>
             </div>
         </aside>
-        <section class="flex-auto py-6 px-14 overflow-auto">
+        <section class="flex-auto py-6 px-7 md:px-14 overflow-auto">
             <div class="mx-auto max-w-screen-xl">
                 <h2 class="text-3xl font-semibold mb-4 leading-relaxed text-indigonight dark:text-indigo-300">Enhance Your Worth</h2>
                 <p>Embrace the challenges, celebrate the victories, and keep coding with passion, for you have the power to shape the digital world and make a lasting impact.</p>
-                <div class="grid grid-cols-10 mt-6 mb-7 gap-6">
-                    <div class="col-span-2">
-                        <a href="#" class="group border dark:border-indigo-500 hover:!border-red-700 transition-colors flex flex-col px-4 py-6 items-center rounded">
+               
+                <div class="flex lg:grid overflow-x-auto grid-cols-10 mt-6 mb-7 gap-3 lg:gap-6">
+                    <div class="col-span-5 lg:col-span-2">
+                        <a href="#" class="slider-item group dark:border-indigo-500 hover:!border-red-700 ">
                             <span class="w-24 h-24 mb-4 border border-red-600 rounded-full grid place-items-center relative">
-                                <span class="absolute -top-2 -right-2 w-24 h-24 scale-90 bg-red-500 bg-opacity-10 rounded-full -z-1"></span>
+                                <span class="absolute -top-2 -right-2 w-24 h-24 scale-90 bg-red-500/10 rounded-full -z-1"></span>
                                 <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 0 384 512" width="48" class="fill-current text-red-600"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M0 32l34.9 395.8L191.5 480l157.6-52.2L384 32H0zm308.2 127.9H124.4l4.1 49.4h175.6l-13.6 148.4-97.9 27v.3h-1.1l-98.7-27.3-6-75.8h47.7L138 320l53.5 14.5 53.7-14.5 6-62.2H84.3L71.5 112.2h241.1l-4.4 47.7z"/></svg>
                             </span>
                             <span class="inline-flex items-center rounded h-8 px-6 text-white bg-red-600 group-hover:bg-red-700 transition-colors">HTML</span>
                         </a>
                     </div>
-                    <div class="col-span-2">  
-                        <a href="#" class="group border dark:border-indigo-500 hover:!border-purple-700 transition-colors flex flex-col px-4 py-6 items-center rounded">
+                    <div class="col-span-5 lg:col-span-2">  
+                        <a href="#" class="slider-item group dark:border-indigo-500 hover:!border-purple-700">
                             <span class="w-24 h-24 mb-4 border border-purple-600 rounded-full grid place-items-center relative">
-                                <span class="absolute -top-2 -right-2 w-24 h-24 scale-90 bg-purple-500 bg-opacity-10 rounded-full -z-1"></span>
+                                <span class="absolute -top-2 -right-2 w-24 h-24 scale-90 bg-purple-50010 rounded-full -z-1"></span>
                                 <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 0 512 512" width="48" class="fill-current text-purple-600"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M480 32l-64 368-223.3 80L0 400l19.6-94.8h82l-8 40.6L210 390.2l134.1-44.4 18.8-97.1H29.5l16-82h333.7l10.5-52.7H56.3l16.3-82H480z"/></svg>
                             </span>
                             <span class="inline-flex items-center rounded h-8 px-6 text-white bg-purple-600 group-hover:bg-purple-700 transition-colors">CSS</span>
                         </a>
                     </div>
-                    <div class="col-span-2">  
-                        <a href="#" class="group border dark:border-indigo-500 hover:!border-yellow-700 transition-colors flex flex-col px-4 py-6 items-center rounded">
+                    <div class="col-span-5 lg:col-span-2">  
+                        <a href="#" class="slider-item group dark:border-indigo-500 hover:!border-yellow-700">
                             <span class="w-24 h-24 mb-4 border border-yellow-600 rounded-full grid place-items-center relative">
-                                <span class="absolute -top-2 -right-2 w-24 h-24 scale-90 bg-yellow-500 bg-opacity-10 rounded-full -z-1"></span>
+                                <span class="absolute -top-2 -right-2 w-24 h-24 scale-90 bg-yellow-500/10 rounded-full -z-1"></span>
                                 <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 0 448 512" width="48" class="fill-current text-yellow-600"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M0 32v448h448V32H0zm243.8 349.4c0 43.6-25.6 63.5-62.9 63.5-33.7 0-53.2-17.4-63.2-38.5l34.3-20.7c6.6 11.7 12.6 21.6 27.1 21.6 13.8 0 22.6-5.4 22.6-26.5V237.7h42.1v143.7zm99.6 63.5c-39.1 0-64.4-18.6-76.7-43l34.3-19.8c9 14.7 20.8 25.6 41.5 25.6 17.4 0 28.6-8.7 28.6-20.8 0-14.4-11.4-19.5-30.7-28l-10.5-4.5c-30.4-12.9-50.5-29.2-50.5-63.5 0-31.6 24.1-55.6 61.6-55.6 26.8 0 46 9.3 59.8 33.7L368 290c-7.2-12.9-15-18-27.1-18-12.3 0-20.1 7.8-20.1 18 0 12.6 7.8 17.7 25.9 25.6l10.5 4.5c35.8 15.3 55.9 31 55.9 66.2 0 37.8-29.8 58.6-69.7 58.6z"/></svg>
                             </span>
                             <span class="inline-flex items-center rounded h-8 px-6 text-white bg-yellow-600 group-hover:bg-yellow-700 transition-colors">Javascript</span>
                         </a>
                     </div>
-                    <div class="col-span-2"> 
-                        <a href="#" class="group border dark:border-indigo-500 hover:!border-green-700 transition-colors flex flex-col px-4 py-6 items-center rounded">
+                    <div class="col-span-5 lg:col-span-2"> 
+                        <a href="#" class="slider-item group dark:border-indigo-500 hover:!border-green-700">
                             <span class="w-24 h-24 mb-4 border border-green-600 rounded-full grid place-items-center relative">
-                                <span class="absolute -top-2 -right-2 w-24 h-24 scale-90 bg-green-500 bg-opacity-10 rounded-full -z-1"></span>
+                                <span class="absolute -top-2 -right-2 w-24 h-24 scale-90 bg-green-500/10 rounded-full -z-1"></span>
                                 <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 0 448 512" width="48" class="fill-current text-green-600"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M448 80v48c0 44.2-100.3 80-224 80S0 172.2 0 128V80C0 35.8 100.3 0 224 0S448 35.8 448 80zM393.2 214.7c20.8-7.4 39.9-16.9 54.8-28.6V288c0 44.2-100.3 80-224 80S0 332.2 0 288V186.1c14.9 11.8 34 21.2 54.8 28.6C99.7 230.7 159.5 240 224 240s124.3-9.3 169.2-25.3zM0 346.1c14.9 11.8 34 21.2 54.8 28.6C99.7 390.7 159.5 400 224 400s124.3-9.3 169.2-25.3c20.8-7.4 39.9-16.9 54.8-28.6V432c0 44.2-100.3 80-224 80S0 476.2 0 432V346.1z"/></svg>
                             </span>
                             <span class="inline-flex items-center rounded h-8 px-6 text-white bg-green-600 group-hover:bg-green-700 transition-colors">SQL</span>
                         </a>
                     </div>
-                    <div class="col-span-2"> 
-                        <a href="#" class="group border dark:border-indigo-500 hover:!border-orange-700 transition-colors flex flex-col px-4 py-6 items-center rounded">
+                    <div class="col-span-5 lg:col-span-2"> 
+                        <a href="#" class="slider-item group dark:border-indigo-500 hover:!border-orange-700">
                             <span class="w-24 h-24 mb-4 border border-orange-600 rounded-full grid place-items-center relative">
-                                <span class="absolute -top-2 -right-2 w-24 h-24 scale-90 bg-orange-500 bg-opacity-10 rounded-full -z-1"></span>
+                                <span class="absolute -top-2 -right-2 w-24 h-24 scale-90 bg-orange-500/10 rounded-full -z-1"></span>
                                 <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 0 384 512" width="48" class="fill-current text-orange-600"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M277.74 312.9c9.8-6.7 23.4-12.5 23.4-12.5s-38.7 7-77.2 10.2c-47.1 3.9-97.7 4.7-123.1 1.3-60.1-8 33-30.1 33-30.1s-36.1-2.4-80.6 19c-52.5 25.4 130 37 224.5 12.1zm-85.4-32.1c-19-42.7-83.1-80.2 0-145.8C296 53.2 242.84 0 242.84 0c21.5 84.5-75.6 110.1-110.7 162.6-23.9 35.9 11.7 74.4 60.2 118.2zm114.6-176.2c.1 0-175.2 43.8-91.5 140.2 24.7 28.4-6.5 54-6.5 54s62.7-32.4 33.9-72.9c-26.9-37.8-47.5-56.6 64.1-121.3zm-6.1 270.5a12.19 12.19 0 0 1-2 2.6c128.3-33.7 81.1-118.9 19.8-97.3a17.33 17.33 0 0 0-8.2 6.3 70.45 70.45 0 0 1 11-3c31-6.5 75.5 41.5-20.6 91.4zM348 437.4s14.5 11.9-15.9 21.2c-57.9 17.5-240.8 22.8-291.6.7-18.3-7.9 16-19 26.8-21.3 11.2-2.4 17.7-2 17.7-2-20.3-14.3-131.3 28.1-56.4 40.2C232.84 509.4 401 461.3 348 437.4zM124.44 396c-78.7 22 47.9 67.4 148.1 24.5a185.89 185.89 0 0 1-28.2-13.8c-44.7 8.5-65.4 9.1-106 4.5-33.5-3.8-13.9-15.2-13.9-15.2zm179.8 97.2c-78.7 14.8-175.8 13.1-233.3 3.6 0-.1 11.8 9.7 72.4 13.6 92.2 5.9 233.8-3.3 237.1-46.9 0 0-6.4 16.5-76.2 29.7zM260.64 353c-59.2 11.4-93.5 11.1-136.8 6.6-33.5-3.5-11.6-19.7-11.6-19.7-86.8 28.8 48.2 61.4 169.5 25.9a60.37 60.37 0 0 1-21.1-12.8z"/></svg>
                             </span>
                             <span class="inline-flex items-center rounded h-8 px-6 text-white bg-orange-600 group-hover:bg-orange-700 transition-colors">JAVA</span>
                         </a>
                     </div>
                 </div>
-                <div class="bg-linkedin p-4 rounded-md text-white flex items-center">
-                    <div class="flex-shrink-0 width-22 pl-2 pr-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="52" viewBox="0 0 48 48" width="52" class="fill-current text-white"><path fill="#0078d4" d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5	V37z"/><path d="M30,37V26.901c0-1.689-0.819-2.698-2.192-2.698c-0.815,0-1.414,0.459-1.779,1.364	c-0.017,0.064-0.041,0.325-0.031,1.114L26,37h-7V18h7v1.061C27.022,18.356,28.275,18,29.738,18c4.547,0,7.261,3.093,7.261,8.274	L37,37H30z M11,37V18h3.457C12.454,18,11,16.528,11,14.499C11,12.472,12.478,11,14.514,11c2.012,0,3.445,1.431,3.486,3.479	C18,16.523,16.521,18,14.485,18H18v19H11z" opacity=".05"/><path d="M30.5,36.5v-9.599c0-1.973-1.031-3.198-2.692-3.198c-1.295,0-1.935,0.912-2.243,1.677	c-0.082,0.199-0.071,0.989-0.067,1.326L25.5,36.5h-6v-18h6v1.638c0.795-0.823,2.075-1.638,4.238-1.638	c4.233,0,6.761,2.906,6.761,7.774L36.5,36.5H30.5z M11.5,36.5v-18h6v18H11.5z M14.457,17.5c-1.713,0-2.957-1.262-2.957-3.001	c0-1.738,1.268-2.999,3.014-2.999c1.724,0,2.951,1.229,2.986,2.989c0,1.749-1.268,3.011-3.015,3.011H14.457z" opacity=".07"/><path fill="#fff" d="M12,19h5v17h-5V19z M14.485,17h-0.028C12.965,17,12,15.888,12,14.499C12,13.08,12.995,12,14.514,12	c1.521,0,2.458,1.08,2.486,2.499C17,15.887,16.035,17,14.485,17z M36,36h-5v-9.099c0-2.198-1.225-3.698-3.192-3.698	c-1.501,0-2.313,1.012-2.707,1.99C24.957,25.543,25,26.511,25,27v9h-5V19h5v2.616C25.721,20.5,26.85,19,29.738,19	c3.578,0,6.261,2.25,6.261,7.274L36,36L36,36z"/></svg>
+                <div class="bg-gradient-to-br from-linkedin/90 p-4 rounded-md text-white flex flex-col md:flex-row items-center">
+                    <div class="flex-shrink-0 width-22 pl-0 lg:pl-2 mb-4 lg:mb-0 pr-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="52" viewBox="0 0 48 48" width="52" class="hover:border-2 hover:rounded fill-current text-white"><path fill="#0078d4" d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5	V37z"/><path d="M30,37V26.901c0-1.689-0.819-2.698-2.192-2.698c-0.815,0-1.414,0.459-1.779,1.364	c-0.017,0.064-0.041,0.325-0.031,1.114L26,37h-7V18h7v1.061C27.022,18.356,28.275,18,29.738,18c4.547,0,7.261,3.093,7.261,8.274	L37,37H30z M11,37V18h3.457C12.454,18,11,16.528,11,14.499C11,12.472,12.478,11,14.514,11c2.012,0,3.445,1.431,3.486,3.479	C18,16.523,16.521,18,14.485,18H18v19H11z" opacity=".05"/><path d="M30.5,36.5v-9.599c0-1.973-1.031-3.198-2.692-3.198c-1.295,0-1.935,0.912-2.243,1.677	c-0.082,0.199-0.071,0.989-0.067,1.326L25.5,36.5h-6v-18h6v1.638c0.795-0.823,2.075-1.638,4.238-1.638	c4.233,0,6.761,2.906,6.761,7.774L36.5,36.5H30.5z M11.5,36.5v-18h6v18H11.5z M14.457,17.5c-1.713,0-2.957-1.262-2.957-3.001	c0-1.738,1.268-2.999,3.014-2.999c1.724,0,2.951,1.229,2.986,2.989c0,1.749-1.268,3.011-3.015,3.011H14.457z" opacity=".07"/><path fill="#fff" d="M12,19h5v17h-5V19z M14.485,17h-0.028C12.965,17,12,15.888,12,14.499C12,13.08,12.995,12,14.514,12	c1.521,0,2.458,1.08,2.486,2.499C17,15.887,16.035,17,14.485,17z M36,36h-5v-9.099c0-2.198-1.225-3.698-3.192-3.698	c-1.501,0-2.313,1.012-2.707,1.99C24.957,25.543,25,26.511,25,27v9h-5V19h5v2.616C25.721,20.5,26.85,19,29.738,19	c3.578,0,6.261,2.25,6.261,7.274L36,36L36,36z"/></svg>
                     </div>
                     <div>
                         <h6 class="text-2xl mb-4 font-normal">You can contact me through Linkedin</h6>
                         <p>Passionate developer driven by curiosity, innovation, and a relentless pursuit of turning ideas into impactful digital experiences.</p>
-                        <a href="#" class="bg-white h-12 p-6 mt-5 inline-flex items-center rounded text-black hover:bg-gray-800 hover:text-white transition-colors">Check Me</a>
+                        <a href="https://www.linkedin.com/in/yigitkutaygulben/" class="bg-white h-12 p-6 mt-5 inline-flex items-center rounded text-black hover:bg-gray-800 hover:text-white transition-colors">Check Me</a>
                     </div>
                 </div>
             </div>
@@ -133,6 +157,10 @@
 
         function modal(id) {
             document.getElementById(id).classList.toggle('active');
+        }
+
+        function sidebar() {
+            document.querySelector('.sidebar').classList.toggle('active');
         }
     </script>
 </body>
